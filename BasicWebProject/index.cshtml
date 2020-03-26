@@ -1,17 +1,50 @@
-﻿<!Doctype
+﻿<!DOCTYPE html>
+@using System.Data;
+@using BasicWebProject.App_Code;
 
 @{ 
-    SongMethods mySongMethods = new SongMethods();
-    string file = @"~\App"
-
-    DataSet ds =
+    Songclass mySongMethods = new Songclass();
+    string file = @"~\App_Data\Songs.xml";
+    DataSet ds = mySongMethods.GetAllSongs(file);
+    Session["playlistClass"] = mySongMethods;
+    Session["file"] = file;
 }
 
 <html>
 <head>
+    <link href="~/Content/bootstrap-grid.min.css" rel="stylesheet" />
     <meta name="viewport" content="width=device=width" />
-    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <link type="text/css" href="~/Content/bootstrap.css"/></a>
-    <h2>Hallo inbrekers</h2>
+    <h2>Playlist Muse</h2>
 </head>
+<body>
+    <br /><br />
+    <table class="table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Artist</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Genre</th>
+            <th>Time</th>
+            <th>File</th>
+        </tr>
+
+        @foreach (DataRow dr in ds.Tables["song"].Rows)
+        {
+    <tr>
+        <td>@dr["id"]</td>
+        <td>@dr["artist"]</td>
+        <td>@dr["title"]</td>
+        <td>@dr["year"]</td>
+        <td>@dr["genre"]</td>
+        <td>@dr["time"]</td>
+        <td>@dr["file"]</td>
+    </tr>
+    }
+  </table>
+    <br /><br />
+    <a href="~/Pages/"
+</body>
 </html>
