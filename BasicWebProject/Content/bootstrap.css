@@ -223,7 +223,9 @@ label {
 }
 
 button {
-  border-radius: 0;
+  border-radius: 1;
+  background-color:aqua;
+  color:white;
 }
 
 button:focus {

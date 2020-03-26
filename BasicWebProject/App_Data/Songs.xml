@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" standalone="yes" ?>
+<?xml version="1.0" standalone="yes"?>
 <playlist>
   <song>
     <id>1</id>
@@ -17,5 +17,14 @@
     <genre>Rap-rock</genre>
     <time>3:15</time>
     <file>twenty-one-pilots_heathens.mp3</file>
+  </song>
+  <song>
+    <id>3</id>
+    <artist>The Weeknd</artist>
+    <title>Blinding Lights</title>
+    <year>2020</year>
+    <genre>Pop</genre>
+    <time>1:51</time>
+    <file>theweeknd_blinding-lights.mp3</file>
   </song>
 </playlist>

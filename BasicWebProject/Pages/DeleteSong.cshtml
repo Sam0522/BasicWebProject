@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+@using System.Data;
+@using BasicWebProject.App_Code;
+
+@{ 
+    Songclass mySongMethods = Session["playlistClass"] as Songclass;
+    string file = Session["file"] as string;
+}
+
+
+<html>
+<head>
+<link rel="stylesheet" href="~/CSS/opmaak.css" />
+<p>Weet u zeker dat u deze song wilt verwijderen?</p>
+<form method="post">
+    Ja<input type="radio" value="ja" name="keuze" />
+    Nee<input type="radio" value="nee" name="keuze" checked="checked" />
+    <br /><br />
+    <input class="button" type="submit" value="Verder" />
+</form>
+</head>
+<body>
+    @if (IsPost)
+    {
+        string keuze = Request.Form["keuze"];
+        if ( keuze == "ja")
+        {
+            string id = Request.QueryString["id"];
+            mySongMethods.DeleteSong(id, file);
+        }
+
+        Response.Redirect(@"~/index.cshtml");
+    }
+</body>
+</html>

@@ -7,36 +7,58 @@
     string file = Session["file"] as string;
 }
 <html>
+<title>Muse song toevoegen</title>
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/CSS/opmaak.css" />
     <title></title>
 </head>
 <body>
     <td>Vul hier de gegevens van een nieuwe song toe:</td>
+    <form method="post">
     <table class="table-bordered">
         <tr>
-            <td>Id: </td><td><input type="text" /> </td>
+            <td>Id: </td><td><input placeholder="Type hier een nummer" name="id" type="text" /> </td>
         </tr>
         <tr>
-            <td>Artist:</td><td><input type="text" /> </td>
+            <td>Artist: </td><td><input placeholder="Type hier de artiest" name="artist" type="text" /> </td>
         </tr>
         <tr>
-            <td>Title: </td><td><input type="text" /> </td>
+            <td>Title: </td><td><input placeholder="Type hier de titel" name="title" type="text" /> </td>
         </tr>               
         <tr>
-            <td>Year: </td><td><input type="text" /> </td>
+            <td>Year: </td><td><input placeholder="Type hier het jaar" name="year" type="text" /> </td>
         </tr>             
         <tr>
-            <td>Genre: </td><td><input type="text" /> </td>
+            <td>Genre: </td><td><input placeholder="Type hier de genre" name="genre" type="text" /> </td>
         </tr>
         <tr>
-            <td>Time: </td><td><input type="text" /> </td>  
+            <td>Time: </td><td><input placeholder="Lengte nummer" name="time" type="text" /> </td>  
         </tr>
         <tr>
-            <td>File: </td><td><input type="text" /> </td>     
+            <td>File: </td><td><input placeholder="File-naam" name="file" type="text" /> </td>     
         </tr>
         <tr>
-        <td><button class="btn">Toevoegen</button></td>
+            <td>             
+                 <button class="button" type="submit">Song toevoegen</button>
+            </td>
         </tr>
+        </table>
+        </form>
+        @if (IsPost)
+        {
+            DataRow dr = mySongMethods.GetEmptyDataRow();
+
+            dr[0] = Request.Form["id"];
+            dr[1] = Request.Form["artist"];
+            dr[2] = Request.Form["title"];
+            dr[3] = Request.Form["year"];
+            dr[4] = Request.Form["genre"];
+            dr[5] = Request.Form["time"];
+            dr[6] = Request.Form["file"];
+
+            mySongMethods.CreateSong(dr, file);
+            Response.Redirect(@"~/index.cshtml");
+        }
 </body>
 </html>
