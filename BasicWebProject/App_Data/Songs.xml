@@ -27,4 +27,13 @@
     <time>1:51</time>
     <file>theweeknd_blinding-lights.mp3</file>
   </song>
+  <song>
+    <id>4</id>
+    <artist>Roddy Ricch</artist>
+    <title>The Box</title>
+    <year>2020</year>
+    <genre>Rap</genre>
+    <time>3:16</time>
+    <file>the-box_roddy-ricch.mp3</file>
+  </song>
 </playlist>
