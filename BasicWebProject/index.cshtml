@@ -17,15 +17,16 @@
     <meta name="viewport" content="width=device=width" />
     <script src="~/Scripts/bootstrap.min.js"></script>
     <link rel="stylesheet" href="~/CSS/opmaak.css" />
-    <h2>Playlist Muse</h2>
 </head>
 <body>
+    @RenderPage("~/Shared/_Header.cshtml")
     <br /><br />
     <table class="table-bordered">
         <tr>
             <th>Id</th>
             <th>Artist</th>
             <th>Title</th>
+            <th>Year</th>
             <th>Year</th>
             <th>Genre</th>
             <th>Time</th>
@@ -34,21 +35,22 @@
 
         @foreach (DataRow dr in ds.Tables["song"].Rows)
         {
-    <tr>
-        <td>@dr["id"]</td>
-        <td>@dr["artist"]</td>
-        <td>@dr["title"]</td>
-        <td>@dr["year"]</td>
-        <td>@dr["genre"]</td>
-        <td>@dr["time"]</td>
-        <td>@dr["file"]</td>
-        <td><a href="~/Pages/DeleteSong.cshtml?id=@dr["id"]">Verwijderen</a></td>
-    </tr>
-    }
-  </table>
+            <tr>
+                <td>@dr["id"]</td>
+                <td>@dr["artist"]</td>
+                <td>@dr["title"]</td>
+                <td>@dr["year"]</td>
+                <td>@dr["genre"]</td>
+                <td>@dr["time"]</td>
+                <td>@dr["file"]</td>
+                <td><a href="~/Pages/DeleteSong.cshtml?id=@dr["id"]">Verwijderen</a></td>
+            </tr>
+        }
+    </table>
     <br /><br />
-          <form method="get" action="~/Pages/CreateSong.cshtml">
-              <button class="button" type="submit">Song toevoegen</button>
-          </form>
+    <form method="get" action="~/Pages/CreateSong.cshtml">
+        <button class="button" type="submit">Song toevoegen</button>
+    </form>
+    @RenderPage("~/Shared/_Footer.cshtml")
 </body>
 </html>

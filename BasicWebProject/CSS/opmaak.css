@@ -1,11 +1,31 @@
 ﻿body {
+    background-image: linear-gradient(to right, rgb(255, 238, 0), rgb(247, 0, 255));
+    background-repeat: no-repeat;
+    height: 737px;
 }
 .button{
-    background-color:darkblue;
-    color: white;
+    background-color: white;
+    color: black;
 }
 .button:hover{
-    background-color:blue;
-    color:white;
+    background-color:darkmagenta;
+    color:black;
     cursor:pointer;
+}
+.table-bordered, th, td {
+    border: 1px solid black;
+}
+.table-bordered {
+    border-collapse: collapse;
+}
+.header{
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+}
+.footer {
+    background-color: red;
+    color: white;
+    text-align: right;
 }

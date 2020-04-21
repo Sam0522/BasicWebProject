@@ -3,15 +3,12 @@
 @using System.Data;
 @using BasicWebProject.App_Code;
 
-@{ 
+@{
     Songclass mySongMethods = Session["playlistClass"] as Songclass;
     string file = Session["file"] as string;
 }
-
-
 <html>
 <head>
-    @RenderPage("~/Shared/_Header.cshtml")
     <title>Muse song verwijderen</title>
     <link rel="stylesheet" href="~/CSS/opmaak.css" />
     <p>Weet u zeker dat u deze song wilt verwijderen?</p>
@@ -34,6 +31,5 @@
 
         Response.Redirect(@"~/index.cshtml");
     }
-    @RenderPage("~/Shared/_Footer.cshtml")
 </body>
 </html>

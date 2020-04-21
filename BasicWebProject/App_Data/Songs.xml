@@ -36,4 +36,13 @@
     <time>3:16</time>
     <file>the-box_roddy-ricch.mp3</file>
   </song>
+  <song>
+    <id>5</id>
+    <artist>Julius, Joep, Joost, Je Valentijn</artist>
+    <title>Lustrum Ga Mee</title>
+    <year>2018</year>
+    <genre>House</genre>
+    <time>2:40</time>
+    <file>lustrum-ga-mee.mp3</file>
+  </song>
 </playlist>
